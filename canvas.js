@@ -91,7 +91,7 @@ window.addEventListener("load", () => {
         lastX = lastY = -1;
         context.beginPath();
     }
-
+    var oldColor;
     function draw(e) {
         if (!painting) return;
 
@@ -123,7 +123,7 @@ window.addEventListener("load", () => {
 
         lastX = e.clientX;
         lastY = e.clientY;
-
+        oldColor = context.strokeStyle;
         hue++;
         if (hue >= 360) {
             hue = 0;
@@ -145,6 +145,7 @@ window.addEventListener("load", () => {
         context.strokeStyle = res.color;
         context.stroke();
         context.moveTo(lastX, lastY);
+        context.strokeStyle = oldColor;
     }
     socket.on('move', (res) => {
         if (res.status == "draw") {
