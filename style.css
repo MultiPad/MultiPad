@@ -99,3 +99,7 @@ input[type="text"] {
     padding: 5px;
     background-color: white;
 }
+
+#gradientColor:checked ~ #glabel {
+    filter: brightness(50%);
+}

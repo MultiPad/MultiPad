@@ -40,6 +40,19 @@ strokeSizeCheckbox.addEventListener('click', () => {
     erase = false;
 });
 
+if (document.querySelector('input[name="checking"]')) {
+    document.querySelectorAll('input[name="checking"]').forEach((elem) => {
+        elem.addEventListener("click", function(event) {
+            var item = event.target.value;
+            if (event.target.value == "eraser") {
+                eraser = true;
+            } else {
+                eraser = false;
+            }
+        });
+    });
+}
+
 hueColor.addEventListener('change', (e) => {
     if (hueColor.checked) {
         console.log("checked ");
@@ -95,7 +108,7 @@ window.addEventListener("load", () => {
             context.strokeStyle = resultColor;
         }
         if (eraser) {
-            context.strokeStyle = '#ffffff';
+            context.strokeStyle = `hsl(0,0%,100%)`;
             console.log(context.strokeStyle);
         }
 
