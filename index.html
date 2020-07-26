@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="first">
+            <p>Passcode: <span id="code"></span></p>
+            <p>&nbsp;</p>
+            <form>
+                <input type="text" id="passcode" placeholder="passcode">
+                <input type="submit" value="Submit">
+            </form>
+            
+        </div>
+
+        <div class="container-canvas">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <footer >
+            <div class="container-footer">
+                <div class="color-picker">
+                    <input type="color" id="input-color">
+                </div>
+
+                <div class="gradient-color">
+                    <input type="checkbox" name="gradientColor" id="gradientColor">
+                    <label for="gradientColor">
+                        <?xml version="1.0" encoding="iso-8859-1"?>
+                            <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="52px" height="52px"
+                                viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve">
+                            <path style="fill:#00DCCD;" d="M22.276,311.484c-2.199-3.298-7.044-3.298-9.244,0L1.483,328.81C0.516,330.26,0,331.964,0,333.706
+                                v14.983c0,4.875,3.953,8.828,8.828,8.828h17.655c4.875,0,8.828-3.953,8.828-8.828v-14.983c0-1.742-0.516-3.446-1.483-4.897
+                                L22.276,311.484z"/>
+                            <path style="fill:#63AFDB;" d="M510.517,328.81l-11.551-17.326c-2.199-3.298-7.044-3.298-9.244,0l-11.551,17.326
+                                c-0.967,1.45-1.483,3.154-1.483,4.897v14.982c0,4.875,3.953,8.828,8.828,8.828h17.655c4.875,0,8.828-3.953,8.828-8.828v-14.983
+                                C512,331.964,511.484,330.26,510.517,328.81z"/>
+                            <path style="fill:#00DCCD;" d="M26.483,154.482c-9.751,0-17.655,7.905-17.655,17.655v105.931c0,9.75,7.904,17.655,17.655,17.655
+                                h44.138V154.482H26.483z"/>
+                            <path style="fill:#63AFDB;" d="M503.172,278.068V172.137c0-9.75-7.905-17.655-17.655-17.655h-44.138v141.241h44.138
+                                C495.267,295.724,503.172,287.818,503.172,278.068z"/>
+                            <rect x="70.621" y="154.482" style="fill:#17D2D0;" width="61.793" height="141.241"/>
+                            <rect x="132.414" y="154.482" style="fill:#24CCD2;" width="61.793" height="141.241"/>
+                            <rect x="194.207" y="154.482" style="fill:#32C5D4;" width="61.793" height="141.241"/>
+                            <rect x="317.793" y="154.482" style="fill:#49BBD7;" width="61.793" height="141.241"/>
+                            <rect x="256" y="154.482" style="fill:#3CC1D5;" width="61.793" height="141.241"/>
+                            <rect x="379.586" y="154.482" style="fill:#57B5D9;" width="61.793" height="141.241"/>
+                            </svg>
+                    </label>
+                </div>
+                <div class="size">
+                    <input type="radio" name="checking" id="strokeSizeCheckbox" value="stroke" checked>
+                    <label for="strokeSize">
+                        <?xml version="1.0" encoding="iso-8859-1"?>
+                            <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="52px" height="52px"
+                                viewBox="0 0 317.037 317.037" style="enable-background:new 0 0 317.037 317.037;" xml:space="preserve">
+                            <g>
+                                <polygon style="fill:#010002;" points="313.831,39.438 280.718,6.325 115.724,147.817 172.339,204.432 	"/>
+                                <polygon style="fill:#010002;" points="164.665,211.28 108.882,155.492 58.293,228.75 91.406,261.863 	"/>
+                                <path style="fill:#010002;" d="M51.418,300.638l30.655-39.798l-23.143-22.724L22.988,265.23c0,0-1.556,33.428-22.898,51.807
+                                    C0.095,317.037,25.261,297.75,51.418,300.638z M40.387,288.955c-3.911,0-7.082-3.171-7.082-7.082s3.171-7.082,7.082-7.082
+                                    s7.082,3.171,7.082,7.082S44.298,288.955,40.387,288.955z"/>
+                                <path style="fill:#010002;" d="M286.402,0.005l30.546,30.546C317.035-1.132,286.402,0.005,286.402,0.005z"/>
+                            </g>
+                            </svg>
+                    </label>
+                </div>
+                <!-- <button id="set-stroke">Set Stroke</button> -->
+                <div class="size"><input type="radio" name="checking" id="eraserSizeCheckbox" value="eraser">
+                    <label for="eraserSize">
+                        <?xml version="1.0" encoding="iso-8859-1"?>
+                            <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="52px" height="52px"
+                                viewBox="0 0 433.25 433.25" style="enable-background:new 0 0 433.25 433.25;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path d="M418.4,192.331c19.8-19.8,19.8-51.9,0-71.7l-0.1-0.1l-78.6-78.3c-19.8-19.8-51.9-19.7-71.8,0l-169.5,169.6l-54.2,54.1
+                                        c-19.8,19.7-19.8,51.8-0.1,71.6l48.3,48.3H10c-5.5,0-10,4.5-10,10s4.5,10,10,10h297.4c5.5,0,10-4.5,10-10s-4.5-10-10-10H225
+                                        l23.9-23.7L418.4,192.331z M196.7,385.831h-76.1l-62.3-62.4c-12-12-11.9-31.4,0-43.4l47.1-47l122.2,122L196.7,385.831z
+                                        M119.6,218.931l162.5-162.5c12-12,31.5-12,43.5,0l78.6,78.4c12,12,12,31.4,0,43.5l-162.4,162.8L119.6,218.931z"/>
+                                </g>
+                            </g>
+                            </svg>
+                    </label>
+                </div>
+                <div class="stroke-range">
+                    <input id="input-stroke" type="range" min="1" max="100" value="10">
+                </div>
+
+                <div class="reset">
+                    <button id="clear-canvas">Clear</button>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script src="canvas.js"></script>
+    </div>
+</body>
+
+</html>
